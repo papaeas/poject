@@ -1,0 +1,19 @@
+<ons-page id="tabbar-page">
+  <ons-toolbar>
+    <div class="center">FoodPanther</div>
+
+  </ons-toolbar>
+  <ons-tabbar swipeable id="appTabbar" position="auto">
+    <ons-tab label="Home" icon="md-home" page="home.html" active></ons-tab>
+    <ons-tab label="Promotion" icon="md-zoom-in" page="promotion.html"></ons-tab>
+    <ons-tab label="My user" icon="fa-cog" page="myuser.html"></ons-tab>
+  </ons-tabbar>
+
+  <script>
+    ons.getScriptPage().addEventListener('prechange', function (event) {
+      if (event.target.matches('#appTabbar')) {
+        event.currentTarget.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label');
+      }
+    });
+  </script>
+</ons-page>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FoodPanther</title>
+
+
+  <link rel="stylesheet" href="css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.css">
+
+
+
+</head>
+
+<body>
+  <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+    <ons-page>
+      <ons-splitter id="appSplitter">
+        
+        <ons-splitter-content page="tabbar.html"></ons-splitter-content>
+      </ons-splitter>
+    </ons-page>
+  </ons-navigator>
+
+  <template id="promotion.html">
+    <ons-page>
+
+
+      <div id="carousel">
+
+      </div>
+
+      <ons-card class="promo">
+        New Promotion
+      </ons-card>
+      <ons-card><img src="p1.png" height="auto" width="100%"></ons-card>
+      <ons-card><img src="p2.png" height="auto" width="100%"></ons-card>
+      <ons-card><img src="p3.png" height="auto" width="100%"></ons-card>
+
+      </p>
+      <style>
+        .promo {
+          background: rgb(27, 203, 216);
+          color: rgb(0, 0, 0);
+        }
+      </style>
+    </ons-page>
+    </ons-page>
+  </template>
+
+  <!-- <template id="animations.html">
+    <ons-page>
+      <ons-list>
+        <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'none'}, 'none')">
+          Items ordered
+        </ons-list-item>
+        <ons-list-item modifier="chevron"
+          onclick="fn.pushPage({'id': 'transition1.html', 'title': 'default'}, 'default')">
+          Contact Us
+        </ons-list-item>
+        <ons-list-item modifier="chevron"
+          onclick="fn.pushPage({'id': 'transition3.html', 'title': 'lift-ios'}, 'lift-ios')">
+          Log out
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </template> -->
+
+  <template id="myuser.html">
+    <ons-page>
+      <ons-list>
+        <ons-list-header>My user</ons-list-header>
+        <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'ordered.html', 'title': 'none'}, 'none')">
+          My ordered
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'location.html', 'title': 'default'}, 'default')">
+          My location
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="login()">
+          Logout
+        </ons-list-item>
+
+      </ons-list>
+      <script>
+        function login() {
+          window.location.href = 'login.html'
+        }
+      </script>
+    </ons-page>
+  </template>
+
+  <template id="ordered.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button>My user</ons-back-button>My ordered
+        </div>
+        <div class="center"></div>
+      </ons-toolbar>
+      <p style="text-align: center">
+        <div>
+          <ons-card>
+            <div class="left">Original Stix 1ea</div>
+            <div class="right" align="right">45 B.</div>
+          </ons-card>
+        </div>
+        <div>
+          <ons-card>
+            <div class="left">Almond Pretzel 1ea</div>
+            <div class="right" align="right">45 B.</div>
+          </ons-card>
+        </div>
+        <div class="total">
+          <ons-card>
+            <div class="left">Total</div>
+            <div class="right" align="right">90 B.</div>
+          </ons-card>
+        </div>
+        <div class="set" align="center">
+          <div clas="set">How will you pay</div>
+          <div clas="set">
+            <ons-button id="push-button" class="button--large--cta"
+              style="background-color: rgb(33, 5, 189);width: 180px; border-radius: 10px; margin: 0 auto;">PayPal
+            </ons-button> </br>
+
+
+            <ons-button id="push-button" class="button--large--cta"
+              style="background-color: rgb(231, 133, 53);width: 180px; border-radius: 10px; margin: 0 auto;">Credit Card
+            </ons-button></br>
+
+            <ons-button id="push-button" class="button--large--cta"
+              style="background-color: rgb(47, 175, 214);width: 180px; border-radius: 10px; margin: 0 auto;">Cash
+            </ons-button></br>
+          </div>
+      </p>
+      <script>
+        ons.getScriptPage().onInit = function () {
+          this.querySelector('ons-toolbar div.center').textContent = this.data.title;
+        }
+      </script>
+
+
+
+      <style>
+        .set {
+          margin: 5%;
+        }
+
+        .total {
+          color: red;
+        }
+      </style>
+    </ons-page>
+  </template>
+
+  <template id="location.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button>My user</ons-back-button>My location
+        </div>
+        <div class="center"></div>
+      </ons-toolbar>
+      <p style="text-align: center">
+        <div>
+          <ons-card>
+            <h3>
+              <div>Akaravee Thoomanee</div>
+              <div>address: 81/5 อ.กะทู้ ต.กะทู้ 83120 จ.ภูเก็ต</div>
+              <div>E-mail: papae@hotmail.com</div>
+            </h3>
+          </ons-card>
+        </div>
+      </p>
+      <script>
+        ons.getScriptPage().onInit = function () {
+          this.querySelector('ons-toolbar div.center').textContent = this.data.title;
+        }
+      </script>
+    </ons-page>
+  </template>
+
+  <style>
+    ons-splitter-side[animation=overlay] {
+      border-left: 1px solid #bbb;
+
+    }
+  </style>
+
+
+
+  <template id="anti.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button>Home</ons-back-button>
+          Auntie Anne
+        </div>
+        <div class="center"></div>
+      </ons-toolbar>
+
+      <ons-pull-hook id="pull-hook" threshold-height="120px">
+        <ons-icon id="pull-hook-icon" size="22px" class="pull-hook-content" icon="fa-arrow-down"></ons-icon>
+      </ons-pull-hook>
+
+      <ons-card>
+        <ons-list-item class="input-items">
+          <div class="left">
+            <ons-checkbox input-id="check-1"></ons-checkbox>
+            <img class="center" src="antiori.png" width="80" height="80">
+          </div>
+          <label class="right">
+            Original Pretzel
+          </label>
+
+        </ons-list-item>
+        <div align="right">
+          <ons-select id="choose-sel" onchange="editSelects(event)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </ons-select>
+        </div>
+
+      </ons-card>
+      <ons-card>
+        <ons-list-item class="input-items">
+          <div class="left">
+            <ons-checkbox input-id="check-1"></ons-checkbox>
+            <img class="center" src="alm.png" width="80" height="80">
+          </div>
+          <label class="right">
+            Almond Pretzel
+          </label>
+        </ons-list-item>
+        <div align="right">
+          <ons-select id="choose-sel" onchange="editSelects(event)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </ons-select>
+        </div>
+
+      </ons-card>
+      <ons-card>
+        <ons-list-item class="input-items">
+          <div class="left">
+            <ons-checkbox input-id="check-1"></ons-checkbox>
+            <img class="center" src="snow.png" width="80" height="80">
+          </div>
+          <label class="right">
+            Snow Stix
+          </label>
+        </ons-list-item>
+        <div align="right">
+          <ons-select id="choose-sel" onchange="editSelects(event)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </ons-select>
+        </div>
+
+      </ons-card>
+      <ons-card>
+        <ons-list-item class="input-items">
+          <div class="left">
+            <ons-checkbox input-id="check-1"></ons-checkbox>
+            <img class="center" src="ori.png" width="80" height="80">
+          </div>
+          <label class="right">
+            Original Stix
+          </label>
+        </ons-list-item>
+        <div align="right">
+          <ons-select id="choose-sel" onchange="editSelects(event)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </ons-select>
+        </div>
+
+      </ons-card>
+
+
+      <style>
+        .pull-hook-content {
+          color: #666;
+          transition: transform .25s ease-in-out;
+        }
+
+        .select {
+          text-align: right;
+        }
+
+        .se {
+          text-align: left;
+        }
+
+        .center {
+          text-align: left;
+        }
+      </style>
+    </ons-page>
+  </template>
+
+</body>
+
+<script src="js/onsenui.min.js"> </script>
+<script src="js/tap.js"></script>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodPanther</title>
+
+    <script src="js/onsenui.js"></script>
+    <script src="js/jquery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.css">
+    <script src="js/onsenui.min.js"> </script>
+    <script src="js/tap.js"></script>
+
+
+
+</head>
+
+<body>
+
+        <ons-navigator id="myNavigator" page="register.html">
+            </ons-navigator>
+            <center>
+                <ons-page id='mypage'>
+                    <ons-card>
+                            <center>
+                        <div>
+                           
+                            <p>
+                                <img src="panther.jpg" alt="Logo FoodMonkey" style="width:130px;height:100px; "><h1>FoodPanther</h1>
+                          </p>
+                            <p><ons-icon size="30px" icon="md-face"></ons-icon></p>
+        
+                            <h3>Create an Account?</h3>
+                            <p>By registering an account, you accept all terms and conditions</p>
+        
+                            <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 8px; width: 280px;">
+                                <ons-input id="username" placeholder="Full Name" float></ons-input>
+                            </p>
+        
+                            <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 8px; width: 280px;">
+                                <ons-input id="email" placeholder="Email Address" float></ons-input>
+                            </p>
+        
+                            <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 8px; width: 280px;">
+                                <ons-input id="phonenumber" placeholder="Phone Number" float></ons-input>
+                            </p>
+        
+                            <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 8px; width: 280px;">
+                                <ons-input id="password" type="password" placeholder="Password" float></ons-input>
+                            </p>
+        
+                            <p>
+                                <ons-button id="registerbt" onclick="register()" class="button--large--cta"
+                                    style="background-color: rgb(197, 148, 207);width: 280px; border-radius: 7px; margin: 0 auto;"> 
+                                    Register</ons-button>
+                                    <script>
+                                        function register() {
+                                          window.location.href='login.html'
+                                        }
+                                        
+                                        </script>
+                            </p>
+        
+                            <p style="align-content: center; color:Gray;">or</p>
+        
+                            <p>
+                                <button class="toolbar-button">
+                                    <ons-button id="facebookbt" class="button--large--cta"
+                                        style="background-color: rgb(15, 18, 247);width: 125px; border-radius: 7px; margin: 0 auto;">
+                                        Facebook</ons-button>
+                                </button>
+                                <button class="toolbar-button">
+                                    <ons-button id="gmailbt" class="button--large--cta"
+                                        style="background-color: rgb(247, 16, 16);width: 125px; border-radius: 7px; margin: 0 auto;">
+                                        Gmail</ons-button>
+                                </button>
+                            </p>
+                        </div>
+                        </center>
+                    </ons-card>
+                </ons-page>
+            </center>
+
+
+
+
+    </body>
+    </html>

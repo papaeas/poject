@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodPanther</title>
+
+    <script src="js/onsenui.js"></script>
+    <script src="js/jquery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.css">
+    <script src="js/onsenui.min.js"> </script>
+    <script src="js/tap.js"></script>
+
+   
+    
+</head>
+
+<body>
+        <ons-navigator id="myNavigator" page="login.html" >
+            </ons-navigator>
+            <center>
+              <ons-page  id='login'>
+                <div>
+                  <p>
+                        <img src="panther.jpg" alt="Logo FoodMonkey" style="width:130px;height:100px; "><h1>FoodPanther</h1>
+                  </p>
+          
+                  <p>Insert your email and password to login</p>
+          
+                  <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 7px; width: 280px;">
+                   
+                    <ons-input id="email" placeholder="Email" float></ons-input>
+                  </p>
+          
+                  <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 7px; width: 280px;">
+                    <ons-input id="password" type="password" placeholder="Password" float></ons-input>
+                  </p>
+          
+                  <p style="margin-top: 30px;">
+                    <ons-button id="loginbt" onclick="login()">Sign in</ons-button>
+                  </p>
+          
+                  <p style="align-content: center; color:Gray;">or</p>
+          
+                  <p>
+                    <ons-button id="signinfacebt" class="button--large--cta"
+                      style="background-color: rgb(15, 18, 247);width: 280px; border-radius: 7px; margin: 0 auto;">Sign In using
+                      Facebook</ons-button>
+                  </p>
+                  <p>
+                    <ons-button id="signinfacebt" class="button--large--cta"
+                      style="background-color: rgb(247, 16, 16);width: 280px; border-radius: 7px; margin: 0 auto;">Sign In using
+                      Gmail</ons-button>
+                  </p>
+          
+                  <p>
+                    <p>Don't have an account?</p>
+                    <ons-button id="reigterbt" onclick="register()">Register</ons-button>
+                      
+                  </p>
+                  
+                 
+                </div>
+                
+          
+              </ons-page>
+              
+            </center>
+            <script>
+            function login() {
+              window.location.href='index.html'
+            }
+              function register() {
+              window.location.href='register.html'
+            } 
+            </script>
+            
+
+
+
+
+</body>
+</html>
